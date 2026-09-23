@@ -56,7 +56,7 @@ with col1:
     n_neihbors = st.slider("Количество соседей", value=5, min_value=1, max_value=25)
     weights = st.selectbox("weights", options=("uniform", "distance"))
     p = st.number_input("distance_p(ower degree)", value=2, min_value=1)
-    st.markdown("Больше о параматрах kNN в sklearn: [по ссылке](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)")
+    st.markdown("Больше о параметрах kNN в sklearn: [по ссылке](https://scikit-learn.org/stable/modules/generated/sklearn.neighbors.KNeighborsClassifier.html)")
 
     knn = KNeighborsClassifier(n_neighbors=n_neihbors, weights=weights, p=p)
     cross_val_scores = cross_val_score(knn, train, labels, scoring="accuracy", cv=5)
